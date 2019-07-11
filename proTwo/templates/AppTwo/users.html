@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Utilisateurs</title>
+    </head>
+    <body>
+        <div class="proTwo container">
+        <h2>Voici tes utilisateurs:</h2>
+            {% if users %}
+                <ol>
+                    {% for user in users %}
+                    <li>Information personnelle</li>
+                        <ul>
+                            <li>prenom:{{ user.first_name }}</li>
+                            <li>nom:{{ user.last_name }}</li>
+                            <li>Email:{{ user.email }}</li>
+                        </ul>
+                {% endfor %}
+                </ol>
+            {% else %}
+            <p>Il n'y a pas encore des enregistrements</p>
+            {% endif %}
+        </div>
+
+    </body>
+</html>
