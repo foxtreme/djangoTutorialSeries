@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-    </head>
-    <body>
-        <h1>Bienvenue au début</h1>
-    </body>
-</html>
+{% extends "basic_app/base.html" %}
+{% load my_extras %}
+{% block body_block %}
+    <h1>Bienvenue au début</h1>
+    <h2>C'est la page index.html!</h2>
+    <h1>{{ text|leave_out:'salut' }}</h1>
+    <h1>{{ number|add:"50" }}</h1>
+{% endblock %}
