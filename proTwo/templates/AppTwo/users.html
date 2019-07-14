@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 {% load staticfiles %}
 <html>
-    <head>
-        <meta charset="utf-8">
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <title>Utilisateurs</title>
-    </head>
-    <body>
-        <div class="proTwo container">
+<head>
+    <meta charset="utf-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/journal/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-ciphE0NCAlD2/N6NUApXAN2dAs/vcSAOTzyE202jJx3oS8n4tAQezRgnlHqcJ59C" crossorigin="anonymous">
+    <title>Utilisateurs</title>
+</head>
+<body>
+<div class="proTwo container">
+    <div class="jumbotron">
         <h2>Voici tes utilisateurs:</h2>
-            {% if users %}
-                <ol>
-                    {% for user in users %}
-                    <li>Information personnelle</li>
-                        <ul>
-                            <li>prenom:{{ user.first_name }}</li>
-                            <li>nom:{{ user.last_name }}</li>
-                            <li>Email:{{ user.email }}</li>
-                        </ul>
-                {% endfor %}
-                </ol>
-            {% else %}
-            <p>Il n'y a pas encore des enregistrements</p>
-            {% endif %}
-        </div>
+    </div>
+    {% if users %}
+        <ol class="list-group">
+            {% for user in users %}
+                <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                    <div class="card-header">Information personnelle</div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            prenom: {{ user.first_name }}<br>
+                            nom: {{ user.last_name }}<br>
+                            Email: {{ user.email }}<br>
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <p>Il n'y a pas encore des enregistrements</p>
+    {% endif %}
+</div>
 
-    </body>
+</body>
 </html>

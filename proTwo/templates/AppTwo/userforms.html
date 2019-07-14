@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 {% load staticfiles %}
 <html>
-    <head>
-        <meta charset="utf-8">
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <title>Formulaire</title>
-    </head>
-    <body>
-        <div class="container">
-            <h1>Inscrivez vous s'il vous plaît</h1>
-            <form method="POST">
-                {{ form.as_p }}
-                {% csrf_token %}
-                <input type="submit" class="btn btn-primary" value="Envoyer">
-            </form>
-        </div>
+<head>
+    <meta charset="utf-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/journal/bootstrap.min.css" rel="stylesheet" integrity="sha384-ciphE0NCAlD2/N6NUApXAN2dAs/vcSAOTzyE202jJx3oS8n4tAQezRgnlHqcJ59C" crossorigin="anonymous">
+    <title>Formulaire</title>
+</head>
+<body>
+<div class="container">
+    <h1>Inscrivez vous s'il vous plaît</h1>
+    <form method="POST">
+        <fieldset>
+            {{ form.as_p }}
+            {% csrf_token %}
+            <input type="submit" class="btn btn-primary" value="Envoyer">
+        </fieldset>
 
-    </body>
+    </form>
+</div>
+
+</body>
 </html>
