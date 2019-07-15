@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/united/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-WTtvlZJeRyCiKUtbQ88X1x9uHmKi0eHCbQ8irbzqSLkE0DpAZuixT5yFvgX0CjIu" crossorigin="anonymous">
+
+    <title>Title</title>
+</head>
+<body>
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a class="nav-link active" href="{% url 'index' %}">Django</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'admin:index' %}">Admin <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'basic_app:register' %}">Register</a>
+    </li>
+</ul>
+<div class="container">
+    {% block body_block %}
+    {% endblock %}
+</div>
+</body>
+</html>
