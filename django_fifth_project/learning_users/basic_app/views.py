@@ -13,6 +13,14 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     return render(request, 'basic_app/index.html')
 
+@login_required
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('index.html'))
+
+@login_required
+def special(request):
+    return HttpResponse("Vous etês connecté, Super!")
 
 def register(request):
     registered = False
